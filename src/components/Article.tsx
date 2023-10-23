@@ -18,10 +18,16 @@ const Article: FC<ArticleProps> = ({ article, removeArticle }) => {
   );
 
   return (
-    <div>
-      <h1>{article.title}</h1>
-      <p>{article.body}</p>
-      <Button variant={"destructive"} onClick={() => deleteArticle(article)}>Delete</Button>
+    <div className="w-96 bg-gray-5 border shadow-md border-gray-300 p-5 rounded-xl">
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-2">
+          <h1 className="font-bold text-xl">{article.title}</h1>
+          <p>{article.body}</p>
+        </div>
+        <Button variant={"destructive"} size={"sm"} onClick={() => deleteArticle(article)}>
+          Delete
+        </Button>
+      </div>
     </div>
   );
 };
